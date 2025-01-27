@@ -1,0 +1,14 @@
+{
+  inputs.determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+  inputs.nix-darwin.url = "github:LnL7/nix-darwin";
+
+  outputs = { determinate, nix-darwin, ... }: {
+    darwinConfigurations.James-MacBook-Pro = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        # Load the Determinate module
+        determinate.darwinModules.default
+      ];
+    };
+  };
+}
