@@ -7,7 +7,13 @@
   # for home-manager, don't change this!
   home.stateVersion = "23.11";
   home.packages = with pkgs; [];
-  home.file.".vimrc".source = ./modules/home/dotfile/vimrc;
+
+  # home.file.".vimrc".source = ./dotfile/vimrc;
+  home.file = {
+    ".zshrc".source = ./dotfile/zshrc;
+    ".vimrc".source = ./dotfile/vimrc;
+  };
+
   home.sessionVariables = {
     EDITOR = "vim";
   };
