@@ -104,7 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#$(scutil --get LocalHostName)";
+#alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#$(scutil --get LocalHostName)";
+alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#James-MacBook-Pro";
 
 # Completion
 eval "$(task --completion zsh)"
