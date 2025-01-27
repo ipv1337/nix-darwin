@@ -9,6 +9,7 @@
   home.file = {
     ".zshrc".source = ./dotfile/zshrc;
     ".vimrc".source = ./dotfile/vimrc;
+    ".gitconfig".source = ./dotfile/gitconfig;
   };
 
   home.sessionVariables = {

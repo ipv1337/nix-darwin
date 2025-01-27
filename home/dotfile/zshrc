@@ -104,12 +104,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#$(scutil --get LocalHostName)";
-alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#James-MacBook-Pro";
+#alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#$(scutil --get LocalHostName)"
+alias switch="darwin-rebuild switch --flake github:ipv1337/nix-darwin#James-MacBook-Pro"
+alias cat="bat"
 
 # Completion
 eval "$(task --completion zsh)"
 eval "$(colima completion zsh)"
 
 export JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
-
