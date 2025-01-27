@@ -42,12 +42,14 @@
           home-manager.useUserPackages = true;
           home-manager.verbose = true;
           home-manager.users.james = import ./home/home.nix;
-        #  home-manager.extraSpecialArgs = {
-        #    inherit inputs;
-        #    #dotfiles = dotfiles;
-        #    # hack around nix-home-manager causing infinite recursion
-        #    #isLinux = false;
-        #  };
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+            #dotfiles = dotfiles;
+            # hack around nix-home-manager causing infinite recursion
+            isLinux = false;
+          };
         }
       ];
       specialArgs = { inherit inputs; };
