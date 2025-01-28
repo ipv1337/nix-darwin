@@ -1,5 +1,8 @@
 { pkgs, ... }: {
 
+  # The platform the configuration will be used on.
+  nixpkgs.hostPlatform = "aarch64-darwin";
+
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
@@ -16,9 +19,6 @@
     builders-use-substitutes = true;
   };
 
-  # auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   nix.package = pkgs.nix;
   programs.nix-index.enable = true;
 
@@ -30,8 +30,10 @@
   #nix.settings.auto-optimise-store = false;
   # nix store optimise (manually instead)
 
-  # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nix = {
+    configureBuildUsers = true;
+    useDaemon = true;
+  };
 
   # linux builder
   # https://nixcademy.com/2024/02/12/macos-linux-builder/
@@ -56,5 +58,8 @@
   #};
   # try it
   # nix build --impure  --expr '(with import <nixpkgs> { system = "aarch64-linux"; }; runCommand "foo" { nativeBuildInputs = [ neofetch ]; } "neofetch >> $out" )' && cat result
+
+  # auto upgrade nix package and the daemon service.
+  services.nix-daemon.enable = true;
 
 }

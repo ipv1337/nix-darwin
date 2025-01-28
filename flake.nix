@@ -40,6 +40,7 @@
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.verbose = true;
           home-manager.users.james = import ./home/home.nix;
           # Optionally, use home-manager.extraSpecialArgs to pass

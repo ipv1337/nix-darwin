@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }: {
 
+  home.username = "james";
+  home.homeDirectory = "/Users/james";
   # this is internal compatibility configuration 
   # for home-manager, don't change this!
   home.stateVersion = "25.05";
