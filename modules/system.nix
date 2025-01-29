@@ -58,14 +58,18 @@
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/finder.nix
       finder = {
-        # bottom status bar
-        #ShowStatusBar = true;
+        AppleShowAllExtensions = true;
+        # ShowStatusBar = true;
         ShowPathbar = true;
 
-        # default to list view
-        #FXPreferredViewStyle = "Nlsv";
-        # full path in window title
-        #_FXShowPosixPathInTitle = true;
+        # WarnOnEmptyTrash = false;
+
+        # FXArrangeGroupViewBy = "Name";
+        FXDefaultSearchScope = "SCcf";
+        # FXPreferredGroupBy = "Kind";
+        FXPreferredViewStyle = "Nlsv"; # default to list view
+        #_FXShowPosixPathInTitle = true; # full path in window title
+        _FXSortFoldersFirst = true;
       };
     };
 

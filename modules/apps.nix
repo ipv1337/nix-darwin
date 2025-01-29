@@ -36,6 +36,8 @@
 
     # brew install
     brews = [
+      "stow"
+      "mise"
       "coreutils"
       "tmux"
       "mosh"
@@ -64,12 +66,20 @@
     # mac app store
     # click
     masApps = {
-      amphetamine = 937984704;
-      #kindle = 302584613;
       tailscale = 1475387142;
-
-      # useful for debugging macos key codes
-      #key-codes = 414568915;
+      bitwarden = 1352778147;
+      amphetamine = 937984704;
+      easyres = 688211836;
+      unsplash = 1284863847;
+      copyclip = 595191960;
+      dropover = 1355679052;
+      hidden-bar = 1452453066;
+      microsoft-onenote = 784801555;
+      telegram = 747648890;
+      whatsapp = 310633997;
+      slack = 803453959;
+      boop = 1518425043;
+      key-codes = 414568915; # useful for debugging macos key codes
     };
   };
 

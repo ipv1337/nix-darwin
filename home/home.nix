@@ -8,11 +8,16 @@
   home.packages = with pkgs; [];
 
   # home.file.".vimrc".source = ./dotfile/vimrc;
-  home.file = {
-    ".zshrc".source = ./dotfile/zshrc;
-    ".vimrc".source = ./dotfile/vimrc;
-    ".gitconfig".source = ./dotfile/gitconfig;
-  };
+  # home.file = {
+  #   ".zshrc".source = ./dotfile/zshrc;
+  #   ".vimrc".source = ./dotfile/vimrc;
+  #   ".gitconfig".source = ./dotfile/gitconfig;
+  #   # ".config/mpv".source = ./dotfile/mpv;
+  #   # ".tmux.conf".text = ''
+  #   #   set -g default-terminal "screen-256color"
+  #   #   set -g history-limit 10000
+  #   # '';
+  # };
 
   home.sessionVariables = {
     EDITOR = "vim";
