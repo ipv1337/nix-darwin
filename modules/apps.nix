@@ -54,6 +54,8 @@
       "docker-buildx"
       "lazydocker"
       "k9s"
+      "posting"
+      "rainfrog"
       # "otel-desktop-viewer"
       "yt-dlp"
       "mpv"
