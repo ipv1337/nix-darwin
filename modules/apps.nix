@@ -36,6 +36,7 @@
 
     # brew install
     brews = [
+      "lazygit"
       "stow"
       "mise"
       "coreutils"
@@ -51,6 +52,7 @@
       "buf"
       "docker"
       "docker-buildx"
+      "lazydocker"
       # "otel-desktop-viewer"
       "yt-dlp"
       "mpv"
