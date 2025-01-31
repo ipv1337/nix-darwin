@@ -53,6 +53,7 @@
       "docker"
       "docker-buildx"
       "lazydocker"
+      "k9s"
       # "otel-desktop-viewer"
       "yt-dlp"
       "mpv"
