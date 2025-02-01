@@ -15,6 +15,7 @@
     bat
     eza
     fzf
+    zoxide
   ];
 
   # To make this work, homebrew need to be installed manually, see
