@@ -37,6 +37,7 @@
 
     # brew install
     brews = [
+      "swiftbar"
       "koekeishiya/formulae/skhd"
       "lazygit"
       "stow"
@@ -68,9 +69,7 @@
     # brew install --cask
     # these need to be updated manually
     #casks = [ "swiftbar" "spotify" "zoom" "intellij-idea" ];
-    casks = [
-      "visual-studio-code"
-    ];
+    casks = [ "visual-studio-code" ];
 
     # mac app store
     # click
