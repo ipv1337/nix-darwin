@@ -40,7 +40,6 @@
       "koekeishiya/formulae/skhd"
       "mise"
       "stow"
-      "swiftbar"
       "lazygit"
       "coreutils"
       "tmux"
@@ -68,7 +67,7 @@
     # brew install --cask
     # these need to be updated manually
     #casks = [ "swiftbar" "spotify" "zoom" "intellij-idea" ];
-    casks = [ "visual-studio-code" ];
+    casks = [ "swiftbar" "visual-studio-code" ];
 
     # mac app store
     # click
