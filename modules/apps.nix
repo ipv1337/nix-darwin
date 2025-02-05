@@ -38,10 +38,11 @@
     # brew install
     brews = [
       "koekeishiya/formulae/skhd"
+      "coreutils"
       "mise"
       "stow"
       "lazygit"
-      "coreutils"
+      "yazi"
       "tmux"
       "mosh"
       "nmap"
