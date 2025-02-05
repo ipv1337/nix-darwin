@@ -37,11 +37,11 @@
 
     # brew install
     brews = [
-      "swiftbar"
       "koekeishiya/formulae/skhd"
-      "lazygit"
-      "stow"
       "mise"
+      "stow"
+      "swiftbar"
+      "lazygit"
       "coreutils"
       "tmux"
       "mosh"
@@ -51,7 +51,6 @@
       "tfenv"
       "bazelisk"
       "skaffold"
-      "argocd"
       "jq"
       "buf"
       "docker"
