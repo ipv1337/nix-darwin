@@ -5,11 +5,11 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-locked.url =
       "github:NixOS/nixpkgs/1042fd8b148a9105f3c0aca3a6177fd1d9360ba5";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
