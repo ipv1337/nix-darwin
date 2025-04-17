@@ -47,8 +47,10 @@
       "mosh"
       "nmap"
       "git-delta"
+      "gh"
       "neovim"
       # "tfenv" # Replaced with mise
+      "sonar-scanner"
       "bazelisk"
       "skaffold"
       "docker"
