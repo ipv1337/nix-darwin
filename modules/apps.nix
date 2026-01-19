@@ -13,9 +13,10 @@
     nixfmt # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-fmt#examples
     tree
     bat
-    eza
-    fzf
-    zoxide
+    # Moved to Homebrew for cross-node sync (see ~/.dotfile/Brewfile)
+    # eza
+    # fzf
+    # zoxide
   ];
 
   # To make this work, homebrew need to be installed manually, see
