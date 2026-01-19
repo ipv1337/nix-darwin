@@ -57,6 +57,81 @@
         ];
         specialArgs = { inherit inputs; };
       };
+      # ARM Mac: james-mbp16
+      darwinConfigurations."james-mbp16" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          configuration
+          ./modules/nix-core.nix
+          ./modules/system.nix
+          ./modules/apps.nix
+          ./modules/host-users.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.verbose = true;
+            home-manager.users.james = import ./home/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              isLinux = false;
+            };
+          }
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      # ARM Mac: james-mbp32
+      darwinConfigurations."james-mbp32" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          configuration
+          ./modules/nix-core.nix
+          ./modules/system.nix
+          ./modules/apps.nix
+          ./modules/host-users.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.verbose = true;
+            home-manager.users.james = import ./home/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              isLinux = false;
+            };
+          }
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      # Intel Mac: james-mbp
+      darwinConfigurations."james-mbp" = nix-darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          configuration
+          ./modules/nix-core.nix
+          ./modules/system.nix
+          ./modules/apps.nix
+          ./modules/host-users.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.verbose = true;
+            home-manager.users.james = import ./home/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              isLinux = false;
+            };
+          }
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations."James-MacBook-Pro".pkgs;
     };
