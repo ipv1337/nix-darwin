@@ -35,10 +35,11 @@
     };
 
     #taps = [ "CtrlSpice/homebrew-otel-desktop-viewer" ];
+    taps = [ "koekeishiya/formulae" ];  # Required for skhd
 
     # brew install
     brews = [
-      "koekeishiya/formulae/skhd"
+      "skhd"  # From koekeishiya/formulae tap
       "coreutils"
       "mise"
       "stow"
