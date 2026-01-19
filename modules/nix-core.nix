@@ -3,6 +3,9 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  # Match existing nixbld group GID (pre-nix-darwin installations use 30000)
+  ids.gids.nixbld = 30000;
+
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
