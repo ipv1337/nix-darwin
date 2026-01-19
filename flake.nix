@@ -57,7 +57,7 @@
         ];
         specialArgs = { inherit inputs; };
       };
-      # ARM Mac: james-mbp16
+      # ARM Mac: james-mbp16 (has nixbld GID 30000 from old nix install)
       darwinConfigurations."james-mbp16" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
@@ -66,6 +66,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          { ids.gids.nixbld = 30000; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -82,7 +83,7 @@
         specialArgs = { inherit inputs; };
       };
 
-      # ARM Mac: james-mbp32
+      # ARM Mac: james-mbp32 (has nixbld GID 350 from Determinate installer)
       darwinConfigurations."james-mbp32" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
@@ -91,6 +92,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -107,15 +109,16 @@
         specialArgs = { inherit inputs; };
       };
 
-      # Intel Mac: james-mbp
+      # Intel Mac: james-mbp (has nixbld GID 350)
       darwinConfigurations."james-mbp" = nix-darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
           configuration
-          ./modules/nix-core.nix
+          ./modules/nix-core-x86.nix  # x86-specific nix-core
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

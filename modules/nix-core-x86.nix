@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "x86_64-darwin";
 
   nix.settings = {
     # enable flakes globally
