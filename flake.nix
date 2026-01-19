@@ -38,6 +38,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -66,6 +67,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
           { ids.gids.nixbld = 30000; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
@@ -92,6 +94,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
           { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
@@ -118,6 +121,7 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
+          ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
           { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {

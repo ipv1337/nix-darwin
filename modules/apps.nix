@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, lib, config, ... }: {
 
   #environment.extraInit = ''
   #  export PATH=$HOME/bin:$PATH
@@ -27,10 +27,6 @@
   # work mac comes with brew
   homebrew = {
     enable = true;
-
-    # WORKAROUND: Disable lockfiles to avoid --no-lock flag that older brew bundle doesn't support
-    # See: https://github.com/LnL7/nix-darwin/issues/XXX
-    global.lockfiles = true;
 
     onActivation = {
       autoUpdate = true;
