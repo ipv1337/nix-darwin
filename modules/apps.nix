@@ -78,24 +78,24 @@
     #casks = [ "swiftbar" "spotify" "zoom" "intellij-idea" ];
     casks = [ "swiftbar" "visual-studio-code" ];
 
-    # mac app store
-    # click
-    masApps = {
-      tailscale = 1475387142;
-      bitwarden = 1352778147;
-      amphetamine = 937984704;
-      easyres = 688211836;
-      unsplash = 1284863847;
-      copyclip = 595191960;
-      dropover = 1355679052;
-      hidden-bar = 1452453066;
-      microsoft-onenote = 784801555;
-      telegram = 747648890;
-      whatsapp = 310633997;
-      slack = 803453959;
-      boop = 1518425043;
-      key-codes = 414568915; # useful for debugging macos key codes
-    };
+    # mac app store - TEMPORARILY DISABLED (mas hangs on password prompt)
+    # Install these manually via App Store, then re-enable
+    # masApps = {
+    #   tailscale = 1475387142;
+    #   bitwarden = 1352778147;
+    #   amphetamine = 937984704;
+    #   easyres = 688211836;
+    #   unsplash = 1284863847;
+    #   copyclip = 595191960;
+    #   dropover = 1355679052;
+    #   hidden-bar = 1452453066;
+    #   microsoft-onenote = 784801555;
+    #   telegram = 747648890;
+    #   whatsapp = 310633997;
+    #   slack = 803453959;
+    #   boop = 1518425043;
+    #   key-codes = 414568915; # useful for debugging macos key codes
+    # };
   };
 
 }
