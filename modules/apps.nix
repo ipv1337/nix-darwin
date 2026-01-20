@@ -34,49 +34,162 @@
       #cleanup = "zap";
     };
 
-    #taps = [ "CtrlSpice/homebrew-otel-desktop-viewer" ];
-    taps = [ "koekeishiya/formulae" ];  # Required for skhd
+    taps = [
+      "koekeishiya/formulae"       # skhd
+      "go-task/tap"                # go-task
+      "openhue/cli"                # openhue-cli
+      "antoniorodr/memo"           # memo (Apple Notes CLI)
+      "atlassian/acli"             # Atlassian CLI
+      "f/mcptools"                 # MCP tools
+      "rust-mcp-stack/tap"         # rust-mcp-filesystem
+      "sinelaw/fresh"              # fresh
+      "slp/krunkit"                # krunkit
+      "sst/tap"                    # opencode
+      "steipete/tap"               # bird, camsnap, gogcli, peekaboo, remindctl, summarize, wacli
+      "workos/tap"                 # workos-cli
+    ];
 
-    # brew install
+    # brew install - organized by category
     brews = [
-      "skhd"  # From koekeishiya/formulae tap
+      # === Terminal & Shell ===
       "coreutils"
-      "mise"
-      "stow"
-      "lazygit"
-      "yazi"
+      "eza"              # Modern ls
+      "fzf"              # Fuzzy finder
+      "zoxide"           # Smart cd
       "tmux"
       "mosh"
-      "nmap"
-      "git-delta"
-      "gh"
+      "yazi"             # File manager
+      "fastfetch"        # System info
+      "htop"             # Process monitor
+      "procs"            # Modern ps
+      "duf"              # Disk usage
+      "watch"
+
+      # === Editors & Dev Tools ===
       "neovim"
-      # "tfenv" # Replaced with mise
-      "sonar-scanner"
-      "bazelisk"
-      "skaffold"
+      "mise"             # Runtime version manager
+      "stow"             # Dotfiles manager
+      "lazygit"
+
+      # === Git ===
+      "gh"
+      "git-delta"
+      "git-lfs"
+      "git-filter-repo"
+      "pre-commit"
+
+      # === Network & HTTP ===
+      "nmap"
+      "curlie"
+      "httpie"
+      "wget"
+      "speedtest-cli"
+      "tailscale"
+      "wireshark"
+
+      # === Containers & K8s ===
       "docker"
       "docker-compose"
       "docker-buildx"
-      "kompose"
       "lazydocker"
+      "kompose"
       "k9s"
+      "skaffold"
+      "incus"
+      "lima-additional-guestagents"
+      "slp/krunkit/krunkit"
+      "socket_vmnet"
+      "spice-protocol"
+      "spice-server"
+
+      # === Languages & Runtimes ===
       "node"
+      "nvm"
       "uv"
+      "python@3.12"
+      "poetry"
+      "pnpm"
+      "ruff"              # Python linter
+
+      # === Build & CI ===
+      "bazelisk"
+      "cmake"
+      "go-task/tap/go-task"
+
+      # === Data & APIs ===
       "jq"
       "buf"
-      "curlie"
       "posting"
-      "rainfrog"
-      # "otel-desktop-viewer"
+      "rainfrog"          # Postgres TUI
+      "stripe-cli"
+
+      # === Code Quality ===
+      "sonar-scanner"
+      "checkstyle"
+      "pmd"
+      "spotbugs"
+      "cloc"
+
+      # === Media ===
       "yt-dlp"
       "mpv"
+
+      # === macOS Utilities ===
+      "koekeishiya/formulae/skhd"
+      "mas"
+      "bitwarden-cli"
+      "openhue/cli/openhue-cli"
+
+      # === Clawdbot Skills (steipete taps) ===
+      "steipete/tap/bird"
+      "steipete/tap/camsnap"
+      "steipete/tap/gogcli"
+      "steipete/tap/peekaboo"
+      "steipete/tap/remindctl"
+      "steipete/tap/summarize"
+      "steipete/tap/wacli"
+
+      # === AI & Coding Agents ===
+      "codex"
+      "sst/tap/opencode"
+      "f/mcptools/mcp"
+      "rust-mcp-stack/tap/rust-mcp-filesystem"
+      "sinelaw/fresh/fresh"
+
+      # === Work Tools ===
+      "atlassian/acli/acli"
+      "jira-cli"
+      "workos/tap/workos-cli"
+      "antoniorodr/memo/memo"
     ];
 
     # brew install --cask
-    # these need to be updated manually
-    #casks = [ "swiftbar" "spotify" "zoom" "intellij-idea" ];
-    casks = [ "swiftbar" "visual-studio-code" ];
+    casks = [
+      # === Terminals & Editors ===
+      "ghostty"
+      "visual-studio-code"
+
+      # === Containers ===
+      "podman-desktop"
+
+      # === Fonts ===
+      "font-hack-nerd-font"
+      "font-dejavu-sans-mono-for-powerline"
+      "font-powerline-symbols"
+
+      # === Cloud ===
+      "gcloud-cli"
+      "google-cloud-sdk"
+
+      # === Utilities ===
+      "swiftbar"
+
+      # === AI/Dev Tools ===
+      "codexbar"
+      "opencode-desktop"
+      "repobar"
+      "slack-cli"
+    ];
 
     # mac app store - TEMPORARILY DISABLED (mas hangs on password prompt)
     # Install these manually via App Store, then re-enable
