@@ -9,7 +9,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     git
-    nil # nix language server
+    nil    # nix language server
     nixfmt # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-fmt#examples
     tree
     bat
@@ -150,7 +150,7 @@
       "steipete/tap/wacli"
 
       # === AI & Coding Agents ===
-      "codex"
+      #"codex"
       "sst/tap/opencode"
       "f/mcptools/mcp"
       "rust-mcp-stack/tap/rust-mcp-filesystem"
@@ -158,7 +158,7 @@
 
       # === Work Tools ===
       "atlassian/acli/acli"
-      "jira-cli"
+      #"jira-cli"
       "workos/tap/workos-cli"
       "antoniorodr/memo/memo"
     ];
@@ -179,7 +179,7 @@
 
       # === Cloud ===
       "gcloud-cli"
-      "google-cloud-sdk"
+      #"google-cloud-sdk"
 
       # === Utilities ===
       "swiftbar"
