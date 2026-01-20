@@ -82,6 +82,12 @@
   # touchid for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
+  # Passwordless sudo for automation
+  security.sudo.extraRules = [{
+    users = [ "james" ];
+    commands = [{ command = "ALL"; options = [ "NOPASSWD" ]; }];
+  }];
+
   # Enable alternative shell support in nix-darwin.
   # programs.fish.enable = true;
 
