@@ -39,6 +39,7 @@
           ./modules/apps.nix
           ./modules/host-users.nix
           ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
+          ./modules/clawdnode.nix  # ClawdNode auto-restart (conditional)
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -68,6 +69,7 @@
           ./modules/apps.nix
           ./modules/host-users.nix
           ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
+          ./modules/clawdnode.nix  # ClawdNode auto-restart (conditional)
           { ids.gids.nixbld = 30000; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
@@ -95,6 +97,7 @@
           ./modules/apps.nix
           ./modules/host-users.nix
           ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
+          ./modules/clawdnode.nix  # ClawdNode auto-restart (conditional)
           { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
@@ -122,6 +125,7 @@
           ./modules/apps.nix
           ./modules/host-users.nix
           ./modules/homebrew-nolock-fix.nix  # WORKAROUND: remove --no-lock flag
+          ./modules/clawdnode.nix  # ClawdNode auto-restart (conditional)
           { ids.gids.nixbld = 350; }  # Match existing GID
           home-manager.darwinModules.home-manager
           {
