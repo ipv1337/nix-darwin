@@ -1,25 +1,26 @@
 # ClawdNode LaunchAgent - auto-restart on crash
-# Only enabled on nodes that run the ClawdNode desktop app
+# Only enabled on nodes that run the Clawdbot desktop app
 { config, lib, pkgs, ... }:
 
 let
-  # Only these hosts run ClawdNode
-  clawdnodeHosts = [ "james-mbp16" "james-mbp32" ];
+  # Only these hosts run Clawdbot desktop app
+  clawdbotHosts = [ "james-mbp16" "james-mbp32" ];
   hostname = config.networking.hostName;
-  enableClawdNode = builtins.elem hostname clawdnodeHosts;
+  enableClawdbot = builtins.elem hostname clawdbotHosts;
 in
 {
-  launchd.user.agents.clawdnode = lib.mkIf enableClawdNode {
+  launchd.user.agents.clawdbot-node = lib.mkIf enableClawdbot {
     serviceConfig = {
       Label = "com.clawdbot.node";
-      ProgramArguments = [ "/usr/bin/open" "-a" "ClawdNode" "--args" "--background" ];
+      # Use "Clawdbot" app name (current release)
+      ProgramArguments = [ "/usr/bin/open" "-a" "Clawdbot" ];
       RunAtLoad = true;
       KeepAlive = {
         SuccessfulExit = false;
       };
       ThrottleInterval = 30;
-      StandardOutPath = "/tmp/clawdnode.log";
-      StandardErrorPath = "/tmp/clawdnode.err";
+      StandardOutPath = "/tmp/clawdbot-node.log";
+      StandardErrorPath = "/tmp/clawdbot-node.err";
     };
   };
 }
