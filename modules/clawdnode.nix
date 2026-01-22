@@ -6,8 +6,19 @@
   launchd.user.agents.clawdbot-node = {
     serviceConfig = {
       Label = "com.clawdbot.node.nix";
-      # Run the app binary directly so launchd can track the process
-      ProgramArguments = [ "/Applications/Clawdbot.app/Contents/MacOS/Clawdbot" ];
+      # Use wrapper script to kill stale SSH tunnels before starting
+      # This fixes reconnection issues when the app restarts but old tunnels persist
+      ProgramArguments = [
+        "/bin/zsh"
+        "-c"
+        ''
+          # Kill any stale SSH tunnels for Clawdbot gateway (port 18789)
+          pkill -f "ssh.*18789" 2>/dev/null || true
+          sleep 1
+          # Start Clawdbot
+          exec /Applications/Clawdbot.app/Contents/MacOS/Clawdbot
+        ''
+      ];
       RunAtLoad = true;
       KeepAlive = true;  # Always restart if process exits
       ThrottleInterval = 10;
