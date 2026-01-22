@@ -6,15 +6,16 @@
   launchd.user.agents.clawdbot-node = {
     serviceConfig = {
       Label = "com.clawdbot.node.nix";
-      # Use "Clawdbot" app name (current release)
-      ProgramArguments = [ "/usr/bin/open" "-a" "Clawdbot" ];
+      # Run the app binary directly so launchd can track the process
+      ProgramArguments = [ "/Applications/Clawdbot.app/Contents/MacOS/Clawdbot" ];
       RunAtLoad = true;
-      KeepAlive = {
-        SuccessfulExit = false;
-      };
-      ThrottleInterval = 30;
+      KeepAlive = true;  # Always restart if process exits
+      ThrottleInterval = 10;
       StandardOutPath = "/tmp/clawdbot-node.log";
       StandardErrorPath = "/tmp/clawdbot-node.err";
+      EnvironmentVariables = {
+        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+      };
     };
   };
 }
