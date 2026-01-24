@@ -13,6 +13,24 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # ==========================================================================
+    # OPTIONAL: nix-clawdbot — Declarative Clawdbot management
+    # ==========================================================================
+    # Uncomment to enable full Nix-managed Clawdbot (gateway + app + tools).
+    # This provides:
+    #   - Pinned versions with instant rollback (home-manager switch --rollback)
+    #   - Declarative plugin system
+    #   - Launchd service management
+    #
+    # Current setup uses npm-installed clawdbot + manual LaunchAgents.
+    # To migrate: uncomment input below, add nix-clawdbot module to each host,
+    # and configure programs.clawdbot in home.nix.
+    #
+    # Docs: https://github.com/clawdbot/nix-clawdbot
+    # --------------------------------------------------------------------------
+    # nix-clawdbot.url = "github:clawdbot/nix-clawdbot";
+    # nix-clawdbot.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # The `outputs` function will return all the build results of the flake.

@@ -1,5 +1,32 @@
-# ClawdNode LaunchAgent - auto-restart on crash
-# Enabled on all hosts - will fail gracefully if app not installed
+# ==============================================================================
+# ClawdNode LaunchAgent — Auto-restart Clawdbot.app on crash
+# ==============================================================================
+#
+# CURRENT STATUS: Legacy module (app-only restart)
+#
+# This module only manages the Clawdbot.app LaunchAgent. The gateway and CLI
+# are currently installed via npm (`npm install -g clawdbot`) and managed by
+# `clawdbot onboard --install-daemon`.
+#
+# FOR FULL NIX MANAGEMENT:
+# ────────────────────────
+# Consider migrating to nix-clawdbot (github:clawdbot/nix-clawdbot) which
+# provides declarative management of:
+#   - Gateway + macOS app + tools (all pinned)
+#   - Launchd services that survive reboots
+#   - Plugin system with declarative config
+#   - Instant rollback via `home-manager switch --rollback`
+#
+# To migrate:
+#   1. Uncomment nix-clawdbot input in flake.nix
+#   2. Add nix-clawdbot.darwinModules.default to each host's modules
+#   3. Configure programs.clawdbot in home.nix
+#   4. Remove this clawdnode.nix module
+#
+# See: https://github.com/clawdbot/nix-clawdbot
+#      https://docs.clawd.bot/install/nix
+#
+# ==============================================================================
 { config, lib, pkgs, ... }:
 
 {
